@@ -1,0 +1,338 @@
+```html
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Сүннөт той</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   БИРИНЧИ БЕТ
+========================= */
+
+#sunnot-cover {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+/* =========================
+   ВИДЕО ФОН
+========================= */
+
+.sunnot-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+/* Видеонун үстүндөгү катмар */
+
+#sunnot-cover::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+}
+
+/* =========================
+   ТЕКСТ
+========================= */
+
+.sunnot-inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 650px;
+
+    padding: 40px 20px;
+}
+
+.sunnot-bismillah {
+    font-size: 18px;
+
+    color: #f2f5f1;
+
+    margin-bottom: 35px;
+
+    font-family: serif;
+}
+
+.sunnot-title {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(48px, 9vw, 85px);
+
+    font-weight: 400;
+
+    color: #0baa05;
+
+    letter-spacing: 1px;
+}
+
+.sunnot-line {
+    width: 90px;
+
+    height: 1px;
+
+    background: #065a03;
+
+    margin: 25px auto;
+}
+
+.sunnot-name {
+    font-family: Georgia, serif;
+
+    font-size: clamp(28px, 6vw, 45px);
+
+    color: #0baa05;
+
+    margin-bottom: 15px;
+}
+
+.sunnot-subtitle {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #f8f7f7;
+
+    margin-bottom: 35px;
+}
+
+/* =========================
+   АЧУУ КНОПКАСЫ
+========================= */
+
+.sunnot-open {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 190px;
+    height: 52px;
+
+    border: 1px solid #8d7b5a;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.45);
+
+    color: #66563b;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all .35s ease;
+
+    backdrop-filter: blur(4px);
+}
+
+.sunnot-open:hover {
+
+    background: #806e4d;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
+
+@media(max-width:600px) {
+
+    #sunnot-cover {
+
+        min-height: 100svh;
+
+        height: 100svh;
+    }
+
+    .sunnot-inner {
+
+        padding: 30px 15px;
+    }
+
+    .sunnot-bismillah {
+
+        font-size: 15px;
+
+        margin-bottom: 25px;
+    }
+
+    .sunnot-title {
+
+        font-size: 52px;
+    }
+
+    .sunnot-name {
+
+        font-size: 32px;
+    }
+
+    .sunnot-subtitle {
+
+        font-size: 11px;
+    }
+
+    .sunnot-open {
+
+        width: 175px;
+
+        height: 50px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     СҮННӨТ ТОЙ — БИРИНЧИ БЕТ
+========================= -->
+
+<section id="sunnot-cover">
+
+
+    <!-- ВИДЕО ФОН -->
+
+    <video
+        class="sunnot-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source src="./video.mp4" type="video/mp4">
+
+    </video>
+
+
+    <!-- МУЗЫКА -->
+
+    <audio id="sunnotMusic" loop preload="auto">
+
+        <source src="./music.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- ТЕКСТ -->
+
+    <div class="sunnot-inner">
+
+        <div class="sunnot-bismillah">
+
+            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+
+        </div>
+
+
+        <h1 class="sunnot-title">
+
+            Сүннөт той
+
+        </h1>
+
+
+        <div class="sunnot-line"></div>
+
+
+        <div class="sunnot-name">
+
+            АЛИМБЕК
+
+        </div>
+
+
+        <div class="sunnot-subtitle">
+
+            ТОЮБУЗГА КОШ КЕЛИҢИЗДЕР!
+
+        </div>
+
+
+        <a
+            href="https://first-engaged-taro.tilda.ws/page279274203.html"
+            class="sunnot-open">
+
+            АЧУУ
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     МУЗЫКАНЫ БАШТОО
+========================= -->
+
+<script>
+
+document.querySelector('.sunnot-open').addEventListener('click', function() {
+
+    const music = document.getElementById('sunnotMusic');
+
+    music.play().catch(function(error) {
+
+        console.log("Музыка башталган жок:", error);
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
+```
